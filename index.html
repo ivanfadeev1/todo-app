@@ -18,9 +18,9 @@
       }
     </script>
   </head>
-  <body class="bg-bg dark:bg-dmBg bg-bgHeaderMobile dark:bg-dmBgHeaderMobile sm:bg-bgHeaderDesktop dark:sm:bg-dmBgHeaderDesktop bg-top bg-no-repeat">
+  <body class="bg-bg bg-bgHeaderMobile bg-top bg-no-repeat sm:bg-bgHeaderDesktop dark:bg-dmBg dark:bg-dmBgHeaderMobile dark:sm:bg-dmBgHeaderDesktop">
     <header class="animation-top mb-[26px] sm:mb-10">
-      <div class="mx-auto flex max-w-[588px] items-center justify-between pl-6 pr-3 pt-[34px] sm:items-start sm:pt-[70px]">
+      <div class="mx-auto flex max-w-[588px] items-center justify-between pl-6 pr-3 pt-[34px] max-sm:pr-2.5 sm:items-start sm:pt-[70px]">
         <h1 class="text-[27px]/[28px] font-bold tracking-[9.5px] text-white max-sm:pt-1.5 sm:text-[40px]/[40px] sm:tracking-[15px]">TODO</h1>
         <button id="theme-button" class="h-12 w-12 duration-150 sm:hover:opacity-75">
           <img class="mx-auto max-sm:w-5" src="img/icon-moon.svg" alt="Moon icon" width="26" height="26" />
@@ -31,49 +31,49 @@
     <main>
       <div class="relative mx-auto max-w-[588px] px-6 pb-[72px]">
         <div
-          class="shadow-card animation-new-todo-input dark:shadow-dmCard dark:bg-dmCard relative mb-4 h-12 rounded-[5px] bg-white pl-[52px] pr-5 text-xs/[12px] sm:mb-6 sm:h-16 sm:pl-[72px] sm:pr-6 sm:text-lg/[18px]">
+          class="animation-new-todo-input relative mb-4 h-12 rounded-[5px] bg-white pl-[52px] pr-5 text-xs/[12px] shadow-card sm:mb-6 sm:h-16 sm:pl-[72px] sm:pr-6 sm:text-lg/[18px] dark:bg-dmCard dark:shadow-dmCard">
           <div id="add-button" class="absolute left-1.5 top-0 h-12 w-12 cursor-pointer sm:left-3 sm:top-2">
-            <span id="button-indicator" class="bg-stroke dark:bg-dmStroke absolute left-2/4 top-2/4 h-5 w-5 -translate-x-2/4 -translate-y-2/4 rounded-full sm:h-6 sm:w-6">
-              <div id="button-circle" class="dark:bg-dmCard absolute left-px top-px h-[18px] w-[18px] rounded-full bg-white sm:h-[22px] sm:w-[22px]"></div>
+            <span id="button-indicator" class="absolute left-2/4 top-2/4 h-5 w-5 -translate-x-2/4 -translate-y-2/4 rounded-full bg-stroke sm:h-6 sm:w-6 dark:bg-dmStroke">
+              <div id="button-circle" class="absolute left-px top-px h-[18px] w-[18px] rounded-full bg-white sm:h-[22px] sm:w-[22px] dark:bg-dmCard"></div>
             </span>
           </div>
           <input
             id="new-todo-input"
-            class="dark:text-dmForeground caret-blue placeholder:text-gray dark:placeholder:text-dmGray h-full w-full bg-transparent tracking-[-0.17px] text-black outline-none"
+            class="h-full w-full bg-transparent tracking-[-0.17px] text-black caret-blue outline-none placeholder:text-gray dark:text-dmForeground dark:placeholder:text-dmGray"
             type="text"
             placeholder="Create a new todo…" />
         </div>
-        <div class="shadow-card animation-todo-list dark:shadow-dmCard dark:bg-dmCard mb-4 overflow-hidden rounded-[5px] bg-white">
+        <div class="animation-todo-list mb-4 overflow-hidden rounded-[5px] bg-white shadow-card dark:bg-dmCard dark:shadow-dmCard">
           <div id="todo-list"></div>
           <div
             id="buttons-container"
-            class="text-gray dark:text-dmGrayButton mx-5 flex h-[50px] items-center justify-between pb-1.5 text-xs/[12px] tracking-[-0.17px] sm:mx-6 sm:pb-1 sm:text-sm/[14px] sm:tracking-[-0.19px]">
+            class="mx-5 flex h-[50px] items-center justify-between pb-1.5 text-xs/[12px] tracking-[-0.17px] text-gray sm:mx-6 sm:pb-1 sm:text-sm/[14px] sm:tracking-[-0.19px] dark:text-dmGrayButton">
             <span id="items-counter">5 items left</span>
-            <button id="clear-completed-button" class="sm:hover:text-grayButtonHover clear--disabled sm:dark:hover:text-dmGrayButtonHover h-full tracking-[-0.17px] duration-100 sm:tracking-[-0.19px]">
+            <button id="clear-completed-button" class="clear--disabled h-full tracking-[-0.17px] duration-100 sm:tracking-[-0.19px] sm:hover:text-grayButtonHover sm:dark:hover:text-dmGrayButtonHover">
               Clear Completed
             </button>
           </div>
         </div>
         <div
           id="filter-tabs"
-          class="text-gray animation-filter dark:text-dmGrayButton max-sm:shadow-card max-sm:dark:shadow-dmCard max-sm:dark:bg-dmCard flex justify-center gap-x-[19px] text-sm/[45px] font-bold tracking-[-0.19px] max-sm:rounded-[5px] max-sm:bg-white sm:absolute sm:bottom-[136px] sm:left-2/4 sm:-translate-x-2/4">
+          class="animation-filter flex justify-center gap-x-[19px] text-sm/[45px] font-bold tracking-[-0.19px] text-gray max-sm:rounded-[5px] max-sm:bg-white max-sm:shadow-card sm:absolute sm:bottom-[136px] sm:left-2/4 sm:-translate-x-2/4 dark:text-dmGrayButton max-sm:dark:bg-dmCard max-sm:dark:shadow-dmCard">
           <button class="filter--active pb-[3px] duration-100" data-filter-tab="all">All</button>
           <button class="pb-[3px] duration-100" data-filter-tab="active">Active</button>
           <button class="pb-[3px] duration-100" data-filter-tab="completed">Completed</button>
         </div>
-        <div class="text-gray dark:text-dmGrayButton mt-10 px-6 text-center text-sm/[14px] tracking-[-0.19px] sm:mt-[49px]">Drag and drop to reorder list</div>
+        <div class="mt-10 px-6 text-center text-sm/[14px] tracking-[-0.19px] text-gray sm:mt-[49px] dark:text-dmGrayButton">Drag and drop to reorder list</div>
       </div>
     </main>
     <template id="todo-item-template">
       <div
         data-todo-item
         ondragstart="return false"
-        class="border-stroke dark:border-dmStroke dark:bg-dmCard relative mb-0 flex touch-none items-center border-b bg-white py-0.5 pr-0.5 sm:py-2 sm:pr-[9px]">
+        class="relative mb-0 flex touch-none items-center border-b border-stroke bg-white py-0.5 pr-0.5 sm:py-2 sm:pr-[9px] dark:border-dmStroke dark:bg-dmCard">
         <label class="grow cursor-pointer select-none pl-[52px] text-xs/[12px] tracking-[-0.17px] sm:pl-[72px] sm:text-lg/[18px] sm:tracking-[-0.25px]">
-          <span data-todo-text class="dark:text-dmForeground duration-50 inline-block max-w-full py-2 text-black">Jog around the park 3x</span>
+          <span data-todo-text class="duration-50 inline-block max-w-full pb-[9px] pt-[7px] text-black dark:text-dmForeground">Jog around the park 3x</span>
           <input class="absolute h-0 w-0 cursor-pointer opacity-0" type="checkbox" tabindex="-1" />
-          <span data-todo-indicator class="bg-stroke dark:bg-dmStroke absolute left-5 top-2/4 h-5 w-5 -translate-y-2/4 rounded-full sm:left-6 sm:h-6 sm:w-6" tabindex="0">
-            <div data-todo-circle class="dark:bg-dmCard duration-50 absolute left-px top-px h-[18px] w-[18px] rounded-full bg-white sm:h-[22px] sm:w-[22px]">
+          <span data-todo-indicator class="absolute left-5 top-2/4 h-5 w-5 -translate-y-2/4 rounded-full bg-stroke sm:left-6 sm:h-6 sm:w-6 dark:bg-dmStroke" tabindex="0">
+            <div data-todo-circle class="duration-50 absolute left-px top-px h-[18px] w-[18px] rounded-full bg-white sm:h-[22px] sm:w-[22px] dark:bg-dmCard">
               <img class="absolute left-2/4 top-2/4 hidden -translate-x-2/4 -translate-y-2/4 max-sm:h-2 max-sm:w-2.5" src="img/icon-check.svg" alt="Check icon" width="11" height="9" />
             </div>
           </span>

@@ -1956,6 +1956,11 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-red-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+}
+
 .bg-bgHeaderMobile {
   background-image: url('../img/bg-mobile-light.jpg');
 }
@@ -2140,6 +2145,14 @@ video {
 
 .pt-\[34px\] {
   padding-top: 34px;
+}
+
+.pb-\[9px\] {
+  padding-bottom: 9px;
+}
+
+.pt-\[7px\] {
+  padding-top: 7px;
 }
 
 .text-left {
@@ -2920,6 +2933,14 @@ video {
 
   .max-sm\:pt-1\.5 {
     padding-top: 0.375rem;
+  }
+
+  .max-sm\:pr-2 {
+    padding-right: 0.5rem;
+  }
+
+  .max-sm\:pr-2\.5 {
+    padding-right: 0.625rem;
   }
 
   .max-sm\:shadow-card {

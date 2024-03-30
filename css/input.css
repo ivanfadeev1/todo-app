@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modifiers */
+
+.item--checked [data-todo-text] {
+  @apply text-grayLight line-through;
+}
+
+.dark .item--checked [data-todo-text] {
+  @apply text-dmGrayFaded;
+}
+
+.item--checked [data-todo-indicator] {
+  background-image: linear-gradient(135deg, #55ddff, #c058f3);
+}
+
+.item--checked [data-todo-circle] {
+  background-color: transparent;
+}
+
+.item--checked [data-todo-indicator] img {
+  display: block;
+}
+
+.filter--active {
+  @apply text-blue;
+}
+
+.counter--hidden {
+  @apply select-none opacity-0;
+}
+
+#new-todo-input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset;
+  -webkit-text-fill-color: #393a4b;
+}
+
+.dark #new-todo-input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #25273d inset;
+  -webkit-text-fill-color: #c8cbe7;
+}
+
+#new-todo-input:focus {
+  @apply text-dmStroke;
+}
+
+.dark #new-todo-input:focus {
+  @apply text-dmForeground;
+}
+
+#new-todo-input:focus::placeholder {
+  @apply text-transparent duration-200;
+}
+
+.ondrag {
+  border: none;
+  border-radius: 5px;
+  border: 1px solid #e3e4f1;
+}
+
+@media (min-width: 588px) {
+  [data-todo-indicator]:hover,
+  #button-indicator:hover {
+    background-image: linear-gradient(135deg, #55ddff, #c058f3);
+  }
+
+  [data-todo-item]:hover [data-remove-button],
+  [data-remove-button]:focus {
+    opacity: 1;
+  }
+
+  [data-remove-button]:hover img {
+    opacity: 0.65;
+  }
+
+  [data-filter-tab]:hover {
+    @apply text-grayButtonHover;
+  }
+
+  .dark [data-filter-tab]:hover {
+    @apply text-dmGrayButtonHover;
+  }
+
+  .filter--active:hover,
+  .dark .filter--active:hover {
+    @apply text-blue;
+  }
+}
+
+/* Animation */
+
+@keyframes top {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0.5;
+  }
+}
+.animation-top {
+  animation: top 0.6s ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes new-todo-input {
+  50% {
+    transform: scale(1.015);
+  }
+}
+.animation-new-todo-input {
+  animation: new-todo-input 0.8s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes todo-list {
+  0% {
+    transform: translateY(5%);
+  }
+}
+.animation-todo-list {
+  animation: todo-list 0.6s ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes filter {
+  100% {
+    opacity: 1;
+  }
+}
+.animation-filter {
+  opacity: 0;
+  animation: filter 0.6s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.4s;
+}
